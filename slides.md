@@ -2,6 +2,7 @@
 marp: true
 theme: custom
 paginate: true
+backgroundImage: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
 ---
 
 <!-- _class: lead -->
