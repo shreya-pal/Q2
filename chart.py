@@ -15,27 +15,22 @@ hours = [f"{h}:00" for h in range(8, 21)]  # business hours: 8AM - 8PM
 
 # Simulate engagement patterns with some realistic variation
 data = np.random.normal(loc=10, scale=3, size=(len(hours), len(days)))
-# Add patterns: higher engagement during mid-day weekdays, drop on weekends
 for i, hour in enumerate(hours):
     for j, day in enumerate(days):
-        # Lunch peak
         if 11 <= int(hour.split(":")[0]) <= 14 and day not in ["Saturday", "Sunday"]:
-            data[i, j] += 5
-        # After work bump
+            data[i, j] += 5  # Lunch peak
         if 17 <= int(hour.split(":")[0]) <= 19 and day in ["Monday", "Tuesday", "Wednesday", "Thursday"]:
-            data[i, j] += 3
-        # Weekend generally lower
+            data[i, j] += 3  # After work bump
         if day in ["Saturday", "Sunday"]:
-            data[i, j] -= 2
+            data[i, j] -= 2  # Weekend dip
 
-# Ensure no negative engagement times
 data = np.clip(data, 0, None)
 
 # Put data in DataFrame
 df = pd.DataFrame(data, index=hours, columns=days)
 
 # Create figure
-plt.figure(figsize=(8, 8))
+plt.figure(figsize=(8, 8), dpi=64)
 
 # Heatmap
 ax = sns.heatmap(
@@ -52,6 +47,6 @@ plt.title("Customer Engagement Patterns by Day & Hour", fontsize=16, pad=20)
 ax.set_xlabel("Day of Week", fontsize=14)
 ax.set_ylabel("Hour of Day", fontsize=14)
 
-# Save as PNG with exact 512x512 pixels
-plt.savefig("chart.png", dpi=64, bbox_inches="tight")
+# Save as EXACT 512x512 pixels
+plt.savefig("chart.png", dpi=64)
 plt.close()
