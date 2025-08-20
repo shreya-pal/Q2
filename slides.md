@@ -47,7 +47,7 @@ section.lead {
 
 ---
 
-<!-- _backgroundImage: url('https://picsum.photos/1200/800') -->
+<!-- _backgroundImage: "https://picsum.photos/1200/800" -->
 <!-- _class: lead -->
 
 # Background Image Slide  
@@ -81,4 +81,3 @@ For sorting algorithms like mergesort.
 
 Questions?  
 **Contact:** 21f1002298@ds.study.iitm.ac.in
-
