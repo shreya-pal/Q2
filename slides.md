@@ -47,8 +47,8 @@ section.lead {
 
 ---
 
-<!-- _backgroundImage: "https://picsum.photos/1200/800" -->
 <!-- _class: lead -->
+<!-- _background: "https://picsum.photos/1200/800" -->
 
 # Background Image Slide  
 
